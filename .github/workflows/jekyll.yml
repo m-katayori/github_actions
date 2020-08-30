@@ -31,4 +31,4 @@ jobs:
           HOST_NAME: ${{ secrets.HOST_NAME }}
         run: |
           echo "$PRIVATE_KEY" > secret_key
-          ssh -oStrictHostKeyChecking=no ${EC2_USER}@${EC2_HOST} -i secret_key "cd ~/test && git pull origin master"
+          ssh -oStrictHostKeyChecking=no ${EC2_USER}@${EC2_HOST} -i secret_key "git pull origin master"
