@@ -21,7 +21,7 @@ jobs:
 
   deploy:
     if: github.ref == 'refs/heads/master'
-    needs: [Jekyll site CI]
+    # needs: [Jekyll site CI]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
