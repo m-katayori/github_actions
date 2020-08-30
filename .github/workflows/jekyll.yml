@@ -20,8 +20,7 @@ jobs:
         jekyll/builder:latest /bin/bash -c "chmod 777 /srv/jekyll && jekyll build --future"
 
   deploy:
-    if: github.ref == 'refs/heads/master'
-    # needs: [Jekyll site CI]
+
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
