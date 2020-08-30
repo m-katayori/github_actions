@@ -18,9 +18,10 @@ jobs:
         docker run \
         -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
         jekyll/builder:latest /bin/bash -c "chmod 777 /srv/jekyll && jekyll build --future"
+
   deploy:
     if: github.ref == 'refs/heads/master'
-    needs: [test]
+    needs: [Jekyll site CI]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
