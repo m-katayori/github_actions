@@ -22,4 +22,3 @@ jobs:
           echo "$PRIVATE_KEY" > private_key
           chmod 600 private_key
           ssh -i private_key ${USER_NAME}@${HOST_NAME} -oStrictHostKeyChecking=no "sudo mkdir hello"
-          # ssh -i private_key ec2-user@35.72.10.129 -oStrictHostKeyChecking=no "cd .ssh/"
