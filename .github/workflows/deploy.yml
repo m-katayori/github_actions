@@ -21,4 +21,5 @@ jobs:
         run: |
           echo "$PRIVATE_KEY" > private_key
           chmod 600 private_key
-          ssh -i private_key ${EC2_USER}@${EC2_HOST} -o StrictHostKeyChecking=no
+          # ssh -i private_key ${EC2_USER}@${EC2_HOST} -oStrictHostKeyChecking=no
+          ssh -i private_key ec2-user@35.72.10.129 -oStrictHostKeyChecking=no
