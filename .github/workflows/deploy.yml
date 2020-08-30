@@ -1,4 +1,4 @@
-name: Jekyll site CI
+name: deploy
 
 on:
   push:
@@ -7,24 +7,13 @@ on:
     branches: [ master ]
 
 jobs:
-  # build:
-
-  #   runs-on: ubuntu-latest
-
-  #   steps:
-  #   - uses: actions/checkout@v2
-  #   - name: Build the site in the jekyll/builder container
-  #     run: |
-  #       docker run \
-  #       -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
-  #       jekyll/builder:latest /bin/bash -c "chmod 777 /srv/jekyll && jekyll build --future"
 
   deploy:
 
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Deploy
+      - name: deploy
         env:
           PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
           USER_NAME: ${{ secrets.USER_NAME }}
