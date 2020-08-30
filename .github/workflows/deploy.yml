@@ -20,4 +20,5 @@ jobs:
           HOST_NAME: ${{ secrets.HOST_NAME }}
         run: |
           echo "$PRIVATE_KEY" > private_key
+          chmod 600 private_key
           ssh -i private_key ${EC2_USER}@${EC2_HOST} -o StrictHostKeyChecking=no "git pull origin master"
