@@ -2,4 +2,4 @@
 GithubActionsを使ってみた。
 
 # description
-masterブランチにpushしたらec2にssh接続して`git pull origin master`を実行する
+masterブランチにpushしたらEC2にssh接続して`git pull origin master`を実行する
